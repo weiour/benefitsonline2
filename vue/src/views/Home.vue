@@ -349,7 +349,6 @@ import Dialog from 'primevue/dialog'
 import Chip from 'primevue/chip'
 import Message from 'primevue/message'
 import Avatar from 'primevue/avatar'
-import api from '../services/api'
 
 export default {
   data() {
