@@ -337,6 +337,7 @@
 </template>
 
 <script>
+import api from '@/api'
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import VoiceAssistant from '../components/VoiceAssistant.vue'
@@ -351,6 +352,19 @@ import Avatar from 'primevue/avatar'
 import api from '../services/api'
 
 export default {
+  data() {
+    return {
+      benefits: []
+    }
+  },
+  async mounted() {
+    try {
+      const response = await api.get('/benefits/')
+      this.benefits = response.data
+    } catch (error) {
+      console.error('Ошибка загрузки льгот:', error)
+    }
+  }
   name: 'Home',
   components: {
     VoiceAssistant,

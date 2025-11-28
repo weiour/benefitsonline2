@@ -60,3 +60,13 @@ setTimeout(() => {
 ThemeManager.init()
 
 app.mount('#app')
+
+async function checkBackendConnection() {
+  try {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/benefits/`)
+    console.log('Backend connection:', response.ok ? 'OK' : 'Failed')
+  } catch (error) {
+    console.error('Cannot connect to backend:', error)
+  }
+}
+checkBackendConnection()
