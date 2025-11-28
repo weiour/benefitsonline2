@@ -1,7 +1,10 @@
 import os
 import dj_database_url
+import warnings
 from pathlib import Path
 from datetime import timedelta
+
+warnings.filterwarnings("ignore", message="No directory at: */staticfiles/")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
