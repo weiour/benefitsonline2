@@ -1,0 +1,12 @@
+[Unit]
+Description=Timer for Lgoty News Fetcher - Запуск каждые 6 часов
+Requires=lgoty-news-fetcher.service
+
+[Timer]
+OnBootSec=1h
+OnUnitActiveSec=6h
+Unit=lgoty-news-fetcher.service
+
+[Install]
+WantedBy=timers.target
+

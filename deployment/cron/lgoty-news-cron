@@ -1,0 +1,7 @@
+# Автоматический сбор новостей о льготах
+# Запускается каждые 6 часов
+0 */6 * * * cd /path/to/lgoty-backend/backend && /path/to/venv/bin/python manage.py fetch_news --limit 10 >> /var/log/lgoty/news-fetcher.log 2>&1
+
+# Альтернативный вариант: каждый день в 9:00 утра
+# 0 9 * * * cd /path/to/lgoty-backend/backend && /path/to/venv/bin/python manage.py fetch_news --limit 10 >> /var/log/lgoty/news-fetcher.log 2>&1
+
